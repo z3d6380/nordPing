@@ -1,6 +1,8 @@
 # nordPing
 A utility that pings a range of nordVPN servers and return the servers with the fastest response
 
+
+## Help Output:
 ```
 python nordPing.py [-h] [-c PING_COUNT] [-n TOP_N] [-C COUNTRY_CODE] [-L LOWER_RANGE] [-U UPPER_RANGE] [-p PROCESSES] [--version]
 
@@ -21,4 +23,31 @@ optional arguments:
   -p PROCESSES, --processes PROCESSES
                         Number of processes to use (Default: 5)
   --version             show program's version number and exit
+```
+
+## Example Use:
+### Input
+```
+python nordPing.py -c 3 -n 5 -C us -L 9372 -U 9390 -p 8
+```
+
+### Output
+```
+
+Settings:
+-------------------------------
+Ping count:             3
+Country code:           us
+Lower range:            9372
+Upper range:            9390
+Parallel Processes:     8
+
+The 5 fastest responses are:
+-------------------------------
+ - us9373.nordvpn.com: 17.9 ms
+ - us9382.nordvpn.com: 18.0 ms
+ - us9378.nordvpn.com: 18.3 ms
+ - us9385.nordvpn.com: 19.3 ms
+ - us9379.nordvpn.com: 19.5 ms
+
 ```
