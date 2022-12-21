@@ -56,5 +56,5 @@ The 5 fastest responses are:
 Contributions are welcome. Fork the repo, make your changes, create a diff file, and email the diff file to luis@moraguez.com
 
 ## Donations:
-If this utility helped you with a project you're working on and you wish to make a donation, you can do so by clicking the button below:
+If this utility helped you with a project you're working on and you wish to make a donation, you can do so by clicking the donate button:
 <noscript><a href="https://liberapay.com/z3d6380/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
