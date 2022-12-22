@@ -7,7 +7,7 @@
 # Usage: python nordPing.py -c <ping_count> -n <top_n> -C <country_code> -L <lower_range> -U <upper_range> -p <processes> --version
 
 from collections import defaultdict
-from multiprocessing import Pool
+from multiprocessing import Pool, cpu_count
 from multiprocessing.managers import BaseManager, DictProxy
 import argparse
 import os
@@ -46,6 +46,11 @@ def ping(ping_count, country_code, i, results):
 
 # Driver code
 if __name__ == '__main__':
+    # Get the number of CPU cores to use as the default number of processes
+    # If hyperthreading is enabled, the number of logical cores will be returned
+    # For example, a 4 core CPU with hyperthreading enabled will return 8
+    default_processes = cpu_count()
+
     # Get the arguments
     parser = argparse.ArgumentParser(prog = 'python nordPing.py', description = 'This script will ping the NordVPN servers and return the ones with the fastest response times')
     parser.add_argument('-c', '--ping_count', type=int, default=1, help='Number of pings to send to each server (Default: 1)')
@@ -53,7 +58,7 @@ if __name__ == '__main__':
     parser.add_argument('-C', '--country_code', type=str, default='us', help='Country code for the servers to ping (Default: us)')
     parser.add_argument('-L', '--lower_range', type=int, default=5500, help='Lower range of the servers to ping (Default: 5500)')
     parser.add_argument('-U', '--upper_range', type=int, default=5502, help='Upper range of the servers to ping (Default: 5502)')
-    parser.add_argument('-p', '--processes', type=int, default=5, help='Number of processes to use (Default: 5)')
+    parser.add_argument('-p', '--processes', type=int, default=default_processes, help='Number of processes to use (Default: ' + str(default_processes) + ')')
     parser.add_argument('--version', action='version', version='%(prog)s 1.0')
     args = parser.parse_args()
 
