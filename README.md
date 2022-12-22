@@ -53,7 +53,7 @@ The 5 fastest responses are:
 ```
 
 ## Contributions:
-Contributions are welcome. Fork the repo, make your changes, create a diff file, and email the diff file to luis@moraguez.com
+Contributions are welcome. Fork the repo, make your changes, create a diff file, and email the diff file and your GitHub username to luis@moraguez.com. If the changes are approved, you will be added as a contributor to the repo.
 
 ## Donations:
 If this utility helped you with a project you're working on and you wish to make a donation, you can do so by clicking the donate button that follows. Thank you for your generosity and support!
